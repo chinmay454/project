@@ -1,5 +1,6 @@
 
 
+
 import random
 import time
 from datetime import datetimesaiml
@@ -9,7 +10,7 @@ class QuizManager:
         self.user_name = user_name
         self.questions = []
         self.score = 0
-        self.total_questions = 0
+        selfanxiety.total_questions = 0
         self.load_questions()
 
     def load_questions(self):
@@ -145,4 +146,7 @@ class QuizManager:
             print("Leaderboard not availablesay.")
 
 
+if _name_ == "_main_":
+    main()
+    all the best
 
