@@ -1,38 +1,4 @@
-import random
-import time
-from datetime import datetime
 
-class QuizManager:
-    def _init_(self, user_name):
-        self.user_name = user_name
-        self.questions = []
-        self.score = 0
-        self.total_questions = 0
-        self.load_questions()
-
-    def load_questions(self):
-        self.questions = [
-            {"question": "Capital of India?", "options": ["Mumbai", "New Delhi", "Chennai", "Kolkata"], "answer": "New Delhi"},
-            {"question": "7 + 8 = ?", "options": ["14", "16", "15", "13"], "answer": "15"},
-            {"question": "Red Planet?", "options": ["Earth", "Mars", "Jupiter", "Saturn"], "answer": "Mars"},
-            {"question": "Android language?", "options": ["Python", "Java", "C", "HTML"], "answer": "Java"},
-            {"question": "√64 = ?", "options": ["6", "7", "8", "9"], "answer": "8"},
-            {"question": "Gas for plants?", "options": ["O2", "CO2", "N2", "He"], "answer": "CO2"},
-            {"question": "H2O is?", "options": ["Hydrogen", "Oxygen", "Water", "Salt"], "answer": "Water"},
-            {"question": "'Hamlet' author?", "options": ["Dickens", "Shakespeare", "Austen", "Tolstoy"], "answer": "Shakespeare"},
-            {"question": "Prime number?", "options": ["4", "6", "9", "7"], "answer": "7"},
-            {"question": "12 * 12 = ?", "options": ["124", "144", "132", "142"], "answer": "144"},
-            {"question": "Currency of Japan?", "options": ["Won", "Rupee", "Yen", "Dollar"], "answer": "Yen"},
-            {"question": "Fastest land animal?", "options": ["Tiger", "Lion", "Cheetah", "Horse"], "answer": "Cheetah"},
-            {"question": "Water boils at?", "options": ["90°C", "100°C", "80°C", "110°C"], "answer": "100°C"},
-            {"question": "Largest ocean?", "options": ["Atlantic", "Pacific", "Indian", "Arctic"], "answer": "Pacific"},
-            {"question": "Python is a?", "options": ["Language", "Animal", "Both", "None"], "answer": "Both"},
-            {"question": "Facebook founder?", "options": ["Gates", "Jobs", "Zuckerberg", "Bezos"], "answer": "Zuckerberg"},
-            {"question": "Taj Mahal in?", "options": ["Delhi", "Agra", "Mumbai", "Jaipur"], "answer": "Agra"},
-            {"question": "India's national bird?", "options": ["Crow", "Peacock", "Sparrow", "Parrot"], "answer": "Peacock"},
-            {"question": "Sun rises from?", "options": ["West", "North", "East", "South"], "answer": "East"},
-            {"question": "Opposite of 'cold'?", "options": ["Hot", "Warm", "Cool", "Heat"], "answer": "Hot"},
-            {"question": "Atomic number of Oxygen?", "options": ["6", "8", "10", "16"], "answer": "8"},
             {"question": "Python creator?", "options": ["Guido", "Linus", "Mark", "Elon"], "answer": "Guido"},
             {"question": "100/10 = ?", "options": ["5", "10", "20", "15"], "answer": "10"},
             {"question": "Square of 9?", "options": ["81", "72", "90", "99"], "answer": "81"},
@@ -113,44 +79,4 @@ class QuizManager:
             print("Needs Improvement.")
         print("="*40)
 
-    def save_score(self):
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        entry = f"{self.user_name} - {self.score}/{self.total_questions} at {timestamp}\n"
-        try:
-            with open("leaderboard.txt", "a") as file:
-                file.write(entry)
-            print("Score saved to leaderboard.txt")
-        except:
-            print("Could not save score.")
-
-    def view_leaderboard(self):
-        print("\n--- Leaderboard ---")
-        try:
-            with open("leaderboard.txt", "r") as file:
-                data = file.readlines()
-                data = data[-5:]
-                for line in data:
-                    print(line.strip())
-        except:
-            print("Leaderboard not available.")
-
-def main():
-    print("="*40)
-    print("         WELCOME TO THE QUIZ        ")
-    print("="*40)
-    name = input("Enter your name: ")
-    while True:
-        quiz = QuizManager(name)
-        quiz.start_quiz()
-        quiz.show_score()
-        quiz.save_score()
-        choice = input("\nDo you want to retry? (y/n): ").lower()
-        if choice != 'y':
-            break
-    view = input("View leaderboard? (y/n): ").lower()
-    if view == 'y':
-        quiz.view_leaderboard()
-    print("\nThank you for playing!")
-
-if _name_ == "_main_":
-    main()
+    
