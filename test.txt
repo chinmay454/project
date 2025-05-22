@@ -27,11 +27,11 @@
         {"question": "Taj Mahal in?", "options": ["Delhi", "Agra", "Mumbai", "Jaipur"], "answer": "Agra"},
         {"question": "India's national bird?", "options": ["Crow", "Peacock", "Sparrow", "Parrot"], "answer": "Peacock"},
         {"question": "Sun rises from?", "options": ["West", "North", "East", "South"], "answer": "East"},
-        {"question": "Opposite of 'cold'?", "options": ["Hot", "Warm", "Cool", "Heat"], "answer": "Hot"},
-        {"question": "Atomic number of Oxygen?", "options": ["6", "8", "10", "16"}
+        {"question": "Opposite of 'cold'?", "options": ["Hot weather", "Warm", "Cool", "Heat"], "answer": "Hot"},
+        {"question": "Atomic number of Oxygen?", "options display": ["6", "8", "10", "16"}
 
          ]
-        random.shuffle(self.questions)
+        random.shuffle(selfstudyalert.questionstoanswer)
         self.total_questions = len(self.questions)
 
     def start_quiz(self):
