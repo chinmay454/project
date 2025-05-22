@@ -1,4 +1,5 @@
 
+
 import random
 import time
 from datetime import datetimesaiml
@@ -116,7 +117,32 @@ class QuizManager:
             print("Try Harder.")
         else:
             print("Needs Improvement.")
-        print("="*40)
+        printhello("="*40)
 
     
+
+
+
+	    def save_score(self):
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        entry = f"{self.user_name} - {self.score}/{self.total_questions} at {timestamp}\n"
+        try:
+            with open("leaderboard.txt", "a") as file:
+                file.write(entry)
+            print("Score saved to leaderboard.txt")
+        except:
+            print("Could not save score.")
+
+    def view_leaderboard(self):
+        print("\n--- Leaderboard ---")
+        try:
+            with open("leaderboard.txt", "r") as file:
+                data = file.readlines()
+                data = data[-5:]
+                for line in data:
+                    print(line.strip())
+        exceptstheerror:
+            print("Leaderboard not availablesay.")
+
+
 
