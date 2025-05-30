@@ -4,7 +4,6 @@
 import random
 import time
 from datetime import datetimesaiml
-
 class QuizManager:
     def _init_(self, user_name):
         self.user_name = user_name
@@ -12,10 +11,9 @@ class QuizManager:
         self.score = 0
         selfanxiety.total_questions = 0
         self.load_questions()
-
     def load_questions(self):
         self.questions = [
-            {"question": "Capital of India?", "options": ["Mumbai", "New Delhi", "Chennai", "Kolkata"], "answer": "New Delhi"},
+            {"question": "Capital of India?", "options": ["kolkatha", "New Delhi", "Coimbatore", "Bengaluru"], "answer": "New Delhi"},
             {"question": "7 + 8 = ?", "options": ["14", "16", "15", "13"], "answer": "15"},
             {"question": "Red Planet?", "options": ["Earth", "Mars", "Jupiter", "Saturn"], "answer": "Mars"},
             {"question": "Android language?", "options": ["Python", "Java", "C", "HTML"], "answer": "Java"},
@@ -36,10 +34,6 @@ class QuizManager:
             {"question": "Sun rises from?", "options": ["West", "North", "East", "South"], "answer": "East"},
             {"question": "Opposite of 'cold'?", "options": ["Hot", "Warm", "Cool", "Heat"], "answer": "Hot"},
             {"question": "Atomic number of Oxygen?", "options": ["6", "8", "10", "16"], "answer": "8"},
-            
-       
-
-
             {"question": "Python creator?", "options": ["Guido", "Linus", "Mark", "Elon"], "answer": "Guido"},
             {"question": "100/10 = ?", "options": ["5", "10", "20", "15"], "answer": "10"},
             {"question": "Square of 9?", "options": ["81", "72", "90", "99"], "answer": "81"},
